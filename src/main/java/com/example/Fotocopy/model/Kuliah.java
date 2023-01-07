@@ -15,20 +15,23 @@ import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 @Entity
 @NoArgsConstructor
-public class Barang {
+public class Kuliah {
     @Id
     @GeneratedValue(strategy = IDENTITY)
 
-    private Long id;
-    private String barangName;
-    private String description;
-    private Integer stoct;
-    private Float price;
-//    private Long idCategory;
+    private Long idKuliah;
+    private String akademik;
+    private String ruang;
+    private Integer jam;
+    private Integer semester;
 
-    @ManyToOne
-    @JoinColumn(name = "idCategory")
-    private Category category;
+    @OneToOne
+    @JoinColumn(name = "idMatkul")
+    private Matkul matkul;
+
+    @OneToOne
+    @JoinColumn(name = "idDosen")
+    private Dosen dosen;
 
     @CreationTimestamp
     @Column(updatable = false)

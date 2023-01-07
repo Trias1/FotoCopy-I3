@@ -10,7 +10,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
 import java.sql.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -19,17 +18,14 @@ import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 @Entity
 @NoArgsConstructor
+public class Dosen {
 
-public class Customers {
     @Id
     @GeneratedValue(strategy = IDENTITY)
 
-    private Long idCustomer;
-    private String fullname;
-    private String hobby;
-    private String gender;
-    private Long telp;
-    private String address;
+    private Long idDosen;
+    private Long nip;
+    private String namaDosen;
 
     @CreationTimestamp
     @Column(updatable = false)
